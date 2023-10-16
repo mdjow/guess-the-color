@@ -1,61 +1,74 @@
 import styled from "styled-components";
 
-type ScoreHistoryProps = {
+interface ScoreHistoryProps {
   timeRemaining: number;
   score: number;
   highScore: number;
+  disabled: boolean;
   onReset: () => void;
-};
+}
 
-export const ScoreHistory = (props: ScoreHistoryProps) => (
+export const ScoreHistory = ({
+  onReset,
+  timeRemaining,
+  highScore,
+  score,
+  disabled,
+}: ScoreHistoryProps) => (
   <ScoreHistoryWrapper>
-    <BoxRow>
+    <Box direction="column">
       <span>Remaning Time (s):</span>
-      <span>{props.timeRemaining}</span>
-    </BoxRow>
-    <RestartButton onClick={props.onReset}>Restart</RestartButton>
-    <BoxColumn>
-      <BoxRow>
+      <span>{timeRemaining / 1000}</span>
+    </Box>
+    <RestartButton onClick={onReset} disabled={disabled}>
+      Restart
+    </RestartButton>
+    <BoxContainer>
+      <Box>
         <span>High score:</span>
-        <span>{props.highScore}</span>
-      </BoxRow>
-      <BoxRow>
+        <span>{highScore}</span>
+      </Box>
+      <Box>
         <span>Score:</span>
-        <span>{props.score}</span>
-      </BoxRow>
-    </BoxColumn>
+        <span>{score}</span>
+      </Box>
+    </BoxContainer>
   </ScoreHistoryWrapper>
 );
 
 const ScoreHistoryWrapper = styled.div`
   display: flex;
   width: 100%;
-  background-color: #f5f5f5;
+  border-radius: var(--border-radius);
   border: 1px solid #e0e0e0;
-  border-radius: 0.2rem;
+  background-color: #f5f5f5;
 
   > *:not(:last-child) {
     border-right: 1px solid #e0e0e0;
   }
 `;
 
-const BoxColumn = styled.div`
+const BoxContainer = styled.div`
   display: flex;
   flex-direction: column;
   font-weight: 300;
   width: 100%;
 `;
 
-const BoxRow = styled.div`
+interface BoxProps {
+  direction?: string;
+}
+
+const Box = styled.div<BoxProps>`
   display: flex;
-  flex-direction: row;
+  flex-direction: ${(props) => props.direction};
   justify-content: space-between;
   align-items: center;
   box-sizing: border-box;
-
   width: 100%;
   padding: 0.2rem 0.5rem;
   font-weight: 400;
+  text-align: center;
 
   :nth-child(2) {
     font-weight: 700;
@@ -75,8 +88,7 @@ const RestartButton = styled.button`
   cursor: pointer;
   background-color: #e0e0e0;
 
-  &:disabled {
-    opacity: 0.5;
-    cursor: not-allowed;
+  &:hover:enabled {
+    background-color: #fafafa;
   }
 `;

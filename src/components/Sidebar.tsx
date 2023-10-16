@@ -1,48 +1,70 @@
-import styled from "styled-components";
+import { useContext } from "react";
 
-import { Cell, Row, Table } from "./Table";
+import styled from "styled-components";
+import { CheckCircleOutlined, HighlightOff } from "@mui/icons-material";
+
+import { TableCell, TableRow, Table, TableBody, TableHeader } from "./Table";
 import { calculateTextColor } from "../utils/calculateTextColor";
+import { GameAnswer, GameContext } from "../context/gameContext";
+import { ScoreEnum } from "../enum/score";
 
 export const Sidebar = () => {
+  const { state } = useContext(GameContext);
+
+  const buildColorCells = (answer: GameAnswer) => {
+    if (!answer.pick) {
+      return (
+        <TableCell colSpan={2}>
+          <TimeOutBox>Time Out</TimeOutBox>
+        </TableCell>
+      );
+    }
+    if (answer.pick === answer.color) {
+      return (
+        <TableCell colSpan={2}>
+          <ColorBox color={answer.pick} />
+        </TableCell>
+      );
+    }
+
+    return (
+      <>
+        <TableCell>
+          <ColorBox color={answer.pick} />
+        </TableCell>
+        <TableCell>
+          <ColorBox color={answer.color} />
+        </TableCell>
+      </>
+    );
+  };
+
   return (
     <SidebarWrapper>
       <Title> Current/Latest Game</Title>
       <Table>
-        <Row>
-          <Cell>Guessed color</Cell>
-          <Cell>Correct color</Cell>
-          <Cell>Score</Cell>
-        </Row>
-        <Row>
-          <Cell>
-            <ColorBox color={"#FFBA5C"} />
-          </Cell>
-          <Cell>
-            <ColorBox color={"blue"} />
-          </Cell>
-          <Cell>
-            <Score>-1</Score>
-          </Cell>
-        </Row>
-        <Row>
-          <Cell colspan={2}>
-            <ColorBox color={"#F86DD0"} />
-          </Cell>
-          <Cell>
-            <Score>-1</Score>
-          </Cell>
-        </Row>
-        <Row>
-          <Cell>
-            <ColorBox color={"#FFFFF"} />
-          </Cell>
-          <Cell>
-            <ColorBox color={"#000000"} />
-          </Cell>
-          <Cell>
-            <Score>-1</Score>
-          </Cell>
-        </Row>
+        <TableHeader>
+          <TableCell>Guessed color</TableCell>
+          <TableCell>Correct color</TableCell>
+          <TableCell>Score</TableCell>
+        </TableHeader>
+        <TableBody>
+          {state?.answers.map((answer) => (
+            <TableRow key={`${answer.pick}-${answer.color}`}>
+              {buildColorCells(answer)}
+              <TableCell>
+                <Score>
+                  {answer.score === ScoreEnum.SUCCESS ? (
+                    <CheckCircleOutlined color="success" />
+                  ) : (
+                    <HighlightOff color="error" />
+                  )}
+                  {answer.score}
+                </Score>
+              </TableCell>
+            </TableRow>
+          ))}
+        </TableBody>
       </Table>
     </SidebarWrapper>
   );
@@ -62,7 +84,7 @@ const Title = styled.h1`
 `;
 
 interface ColorBoxProps {
-  color: string;
+  color?: string;
 }
 
 const ColorBox = styled.div<ColorBoxProps>`
@@ -71,17 +93,28 @@ const ColorBox = styled.div<ColorBoxProps>`
   align-items: center;
   width: 100%;
   padding: 0.2rem;
-  background-color: ${(props) => props.color};
   border-radius: var(--border-radius);
+  background-color: ${(props) => props.color};
 
   &::after {
     content: "${(props) => props.color}";
-    color: ${(props) => calculateTextColor(props.color)};
+    color: ${(props) => props.color && calculateTextColor(props.color)};
   }
+`;
+
+const TimeOutBox = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 0.2rem;
+  border-radius: var(--border-radius);
+  border: 1px solid #e0e0e0;
 `;
 
 const Score = styled.div`
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly;
   align-items: center;
+  font-weight: 600;
 `;
