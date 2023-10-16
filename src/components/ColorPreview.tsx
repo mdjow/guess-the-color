@@ -12,7 +12,11 @@ export const ColorPreview = ({
   onStart,
 }: ColorPreviewProps) => (
   <ColorPreviewWrapper color={color}>
-    {!started && <StartButton onClick={onStart}>Start</StartButton>}
+    {!started && (
+      <StartButton data-testid="start-button" onClick={onStart}>
+        Start
+      </StartButton>
+    )}
   </ColorPreviewWrapper>
 );
 

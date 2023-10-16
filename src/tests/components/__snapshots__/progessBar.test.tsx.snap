@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ProgressBar component Should render component matches snapshot 1`] = `
+.c0 {
+  height: 0.6rem;
+  border-radius: var(--border-radius);
+  background-color: #f5f5f5;
+}
+
+.c0::after {
+  content: "";
+  display: flex;
+  width: 50%;
+  height: 100%;
+  background-color: #4caf50;
+  transition: width 1s linear;
+  border-radius: var(--border-radius);
+}
+
+<div>
+  <div
+    class="c0"
+    progress="50"
+  />
+</div>
+`;

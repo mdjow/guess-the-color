@@ -6,8 +6,8 @@ function hexToRgb(hex: string) {
   return [r, g, b];
 }
 
-export function calculateTextColor(bgColor: string) {
-  const [r, g, b] = hexToRgb(bgColor);
+export function calculateTextColor(color: string) {
+  const [r, g, b] = hexToRgb(color);
   const brightness = (r * 299 + g * 587 + b * 114) / 1000;
   return brightness > 128 ? "#000000" : "#ffffff";
 }

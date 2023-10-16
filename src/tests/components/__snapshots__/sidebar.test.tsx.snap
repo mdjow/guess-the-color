@@ -1,0 +1,261 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Sidebar component should render component matches snapshot 1`] = `
+.c2 {
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+}
+
+.c3 {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 0;
+  border-bottom: 1px solid var(--border-color);
+  font-weight: 600;
+}
+
+.c5 {
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+}
+
+.c6 {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 0;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.c4 {
+  flex: 1;
+  text-align: center;
+  padding: 0 0.5rem;
+}
+
+.c7 {
+  flex: 2;
+  text-align: center;
+  padding: 0 0.5rem;
+}
+
+.c0 {
+  display: flex;
+  flex-direction: column;
+  width: 20rem;
+  border-right: 1px solid var(--border-color);
+}
+
+.c1 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  text-align: center;
+}
+
+.c8 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 0.2rem;
+  border-radius: var(--border-radius);
+  background-color: #FC2703;
+}
+
+.c8::after {
+  content: "#FC2703";
+  color: #ffffff;
+}
+
+.c10 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 0.2rem;
+  border-radius: var(--border-radius);
+  background-color: #337FF2;
+}
+
+.c10::after {
+  content: "#337FF2";
+  color: #ffffff;
+}
+
+.c11 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 0.2rem;
+  border-radius: var(--border-radius);
+  background-color: #9F22E0;
+}
+
+.c11::after {
+  content: "#9F22E0";
+  color: #ffffff;
+}
+
+.c12 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 0.2rem;
+  border-radius: var(--border-radius);
+  border: 1px solid #e0e0e0;
+}
+
+.c9 {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  font-weight: 600;
+}
+
+<div
+  class="c0"
+>
+  <h1
+    class="c1"
+  >
+     Current/Latest Game
+  </h1>
+  <div
+    class="c2"
+  >
+    <div
+      class="c3"
+    >
+      <div
+        class="c4"
+      >
+        Guessed color
+      </div>
+      <div
+        class="c4"
+      >
+        Correct color
+      </div>
+      <div
+        class="c4"
+      >
+        Score
+      </div>
+    </div>
+    <div
+      class="c5"
+    >
+      <div
+        class="c6"
+      >
+        <div
+          class="c7"
+          colspan="2"
+        >
+          <div
+            class="c8"
+            color="#FC2703"
+          />
+        </div>
+        <div
+          class="c4"
+        >
+          <div
+            class="c9"
+          >
+            <svg
+              aria-hidden="true"
+              class="MuiSvgIcon-root MuiSvgIcon-colorSuccess MuiSvgIcon-fontSizeMedium css-4b67si-MuiSvgIcon-root"
+              data-testid="CheckCircleOutlinedIcon"
+              focusable="false"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm4.59-12.42L10 14.17l-2.59-2.58L6 13l4 4 8-8z"
+              />
+            </svg>
+            5
+          </div>
+        </div>
+      </div>
+      <div
+        class="c6"
+      >
+        <div
+          class="c4"
+        >
+          <div
+            class="c10"
+            color="#337FF2"
+          />
+        </div>
+        <div
+          class="c4"
+        >
+          <div
+            class="c11"
+            color="#9F22E0"
+          />
+        </div>
+        <div
+          class="c4"
+        >
+          <div
+            class="c9"
+          >
+            <svg
+              aria-hidden="true"
+              class="MuiSvgIcon-root MuiSvgIcon-colorError MuiSvgIcon-fontSizeMedium css-1wxstni-MuiSvgIcon-root"
+              data-testid="HighlightOffIcon"
+              focusable="false"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M14.59 8 12 10.59 9.41 8 8 9.41 10.59 12 8 14.59 9.41 16 12 13.41 14.59 16 16 14.59 13.41 12 16 9.41 14.59 8zM12 2C6.47 2 2 6.47 2 12s4.47 10 10 10 10-4.47 10-10S17.53 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"
+              />
+            </svg>
+            -1
+          </div>
+        </div>
+      </div>
+      <div
+        class="c6"
+      >
+        <div
+          class="c7"
+          colspan="2"
+        >
+          <div
+            class="c12"
+          >
+            Time Out
+          </div>
+        </div>
+        <div
+          class="c4"
+        >
+          <div
+            class="c9"
+          >
+            <svg
+              aria-hidden="true"
+              class="MuiSvgIcon-root MuiSvgIcon-colorError MuiSvgIcon-fontSizeMedium css-1wxstni-MuiSvgIcon-root"
+              data-testid="HighlightOffIcon"
+              focusable="false"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M14.59 8 12 10.59 9.41 8 8 9.41 10.59 12 8 14.59 9.41 16 12 13.41 14.59 16 16 14.59 13.41 12 16 9.41 14.59 8zM12 2C6.47 2 2 6.47 2 12s4.47 10 10 10 10-4.47 10-10S17.53 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"
+              />
+            </svg>
+            -2
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

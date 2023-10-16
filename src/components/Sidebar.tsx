@@ -5,8 +5,8 @@ import { CheckCircleOutlined, HighlightOff } from "@mui/icons-material";
 
 import { TableCell, TableRow, Table, TableBody, TableHeader } from "./Table";
 import { calculateTextColor } from "../utils/calculateTextColor";
-import { GameAnswer, GameContext } from "../context/gameContext";
 import { ScoreEnum } from "../enum/score";
+import { GameAnswer, GameContext } from "../contexts/GameContext";
 
 export const Sidebar = () => {
   const { state } = useContext(GameContext);

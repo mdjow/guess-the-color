@@ -1,0 +1,48 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ColorOptions component should render component matches snapshot 1`] = `
+.c0 {
+  display: flex;
+  gap: 0.3rem;
+}
+
+.c1 {
+  width: 100%;
+  padding: 1rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  background-color: #ffffff;
+  border: 1px solid #e0e0e0;
+}
+
+.c1:hover:enabled {
+  background-color: #eeeeee;
+}
+
+<div>
+  <div
+    class="c0"
+  >
+    <button
+      class="c1"
+      color="#10367c"
+    >
+      #10367c
+    </button>
+    <button
+      class="c1"
+      color="#ff5733"
+    >
+      #ff5733
+    </button>
+    <button
+      class="c1"
+      color="#ff33cc"
+    >
+      #ff33cc
+    </button>
+  </div>
+</div>
+`;

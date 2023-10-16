@@ -1,0 +1,51 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ColorPreview component should render component with started false corresponds to snapshot 1`] = `
+.c0 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 20rem;
+  background-color: #ff5733;
+}
+
+.c1 {
+  font-size: 1.5rem;
+  padding: 0.7rem 3rem;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  background-color: #fff;
+  border: 1px solid #e0e0e0;
+}
+
+<div>
+  <div
+    class="c0"
+    color="#ff5733"
+  >
+    <button
+      class="c1"
+      data-testid="start-button"
+    >
+      Start
+    </button>
+  </div>
+</div>
+`;
+
+exports[`ColorPreview component should render component with started true corresponds to snapshot 1`] = `
+.c0 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 20rem;
+  background-color: #ff5733;
+}
+
+<div>
+  <div
+    class="c0"
+    color="#ff5733"
+  />
+</div>
+`;

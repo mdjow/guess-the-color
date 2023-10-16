@@ -20,7 +20,11 @@ export const ScoreHistory = ({
       <span>Remaning Time (s):</span>
       <span>{timeRemaining / 1000}</span>
     </Box>
-    <RestartButton onClick={onReset} disabled={disabled}>
+    <RestartButton
+      data-testid="reset-game"
+      onClick={onReset}
+      disabled={disabled}
+    >
       Restart
     </RestartButton>
     <BoxContainer>

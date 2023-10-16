@@ -6,7 +6,7 @@ import { ColorOptions } from "./ColorOptions";
 import { ColorPreview } from "./ColorPreview";
 import { ProgressBar } from "./ProgessBar";
 import { ScoreHistory } from "./ScoreHistory";
-import { GameContext } from "../context/gameContext";
+import { GameContext } from "../contexts/GameContext";
 
 const TIME_ANSWER_REMAINING = 10000;
 
@@ -21,21 +21,6 @@ export const Game = () => {
     endGame,
   } = useContext(GameContext);
 
-  const timerGameRef = useRef<number>();
-  const timerAnswerRef = useRef<number>();
-
-  useEffect(() => {
-    if (!state?.timeGameRemaining) {
-      clearInterval(timerGameRef.current);
-      clearInterval(timerAnswerRef.current);
-      endGame && endGame();
-    }
-  }, [endGame, state?.timeGameRemaining]);
-
-  if (!state) {
-    return;
-  }
-
   const {
     started,
     score,
@@ -45,44 +30,56 @@ export const Game = () => {
     timeGameRemaining,
   } = state;
 
+  const timerGameRef = useRef<NodeJS.Timeout>();
+  const timerAnswerRef = useRef<NodeJS.Timeout>();
+
+  useEffect(() => {
+    if (timeGameRemaining === 0) {
+      clearInterval(timerGameRef.current);
+      clearInterval(timerAnswerRef.current);
+      endGame();
+    }
+  }, [endGame, timeGameRemaining]);
+
   const setTimerAnswerInterval = () => {
     if (timerAnswerRef.current) {
       clearInterval(timerAnswerRef.current);
     }
 
-    timerAnswerRef.current = setInterval(() => {
-      pickColor && pickColor("");
-    }, TIME_ANSWER_REMAINING);
+    timerAnswerRef.current = setInterval(
+      () => pickColor(""),
+      TIME_ANSWER_REMAINING
+    );
   };
 
   const handleStartGame = () => {
-    startGame && startGame();
+    startGame();
 
     timerGameRef.current = setInterval(() => {
-      decrementTime && decrementTime();
+      decrementTime();
     }, 1000);
 
     setTimerAnswerInterval();
   };
 
   const handleResetGame = () => {
-    resetGame && resetGame();
-
     clearInterval(timerGameRef.current);
     clearInterval(timerAnswerRef.current);
+
+    resetGame();
   };
 
   const handleResetData = () => {
-    resetData && resetData();
-
     clearInterval(timerGameRef.current);
     clearInterval(timerAnswerRef.current);
+
+    resetData();
   };
 
   const handlePickColor = (color: string) => {
-    pickColor && pickColor(color);
-
     setTimerAnswerInterval();
+
+    pickColor(color);
   };
 
   return (
@@ -106,7 +103,7 @@ export const Game = () => {
         disabled={!started}
         onSelect={handlePickColor}
       />
-      <ResetDataButton onClick={handleResetData}>
+      <ResetDataButton data-testid="reset-all-data" onClick={handleResetData}>
         Reset all data
       </ResetDataButton>
     </GameWrapper>

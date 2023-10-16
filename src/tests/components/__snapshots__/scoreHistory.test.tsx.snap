@@ -1,0 +1,51 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ScoreHistory component should render component matches snapshot 1`] = `
+<div>
+  <div
+    class="sc-beyTiQ jqMfbd"
+  >
+    <div
+      class="sc-dmyDmy kbhgAm"
+      direction="column"
+    >
+      <span>
+        Remaning Time (s):
+      </span>
+      <span>
+        30
+      </span>
+    </div>
+    <button
+      class="sc-hLQTFJ iQaexY"
+      data-testid="reset-game"
+    >
+      Restart
+    </button>
+    <div
+      class="sc-guDMob cwozNf"
+    >
+      <div
+        class="sc-dmyDmy iZUnsQ"
+      >
+        <span>
+          High score:
+        </span>
+        <span>
+          100
+        </span>
+      </div>
+      <div
+        class="sc-dmyDmy iZUnsQ"
+      >
+        <span>
+          Score:
+        </span>
+        <span>
+          50
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
+`;
