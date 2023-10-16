@@ -38,7 +38,7 @@ const Option = styled.button`
   border-radius: var(--border-radius);
   cursor: pointer;
   background-color: #ffffff;
-  border: 1px solid #e0e0e0;
+  border: 1px solid var(--border-color);
 
   &:hover:enabled {
     background-color: #eeeeee;

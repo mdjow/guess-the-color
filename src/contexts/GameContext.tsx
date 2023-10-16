@@ -1,7 +1,7 @@
 /* eslint-disable react-refresh/only-export-components */
 import { ReactNode, createContext, useReducer } from "react";
 
-import { gameReducer } from "./gameReducer";
+import { gameReducer } from "./GameReducer";
 
 const TIME_GAME_REMAINING = 30000;
 

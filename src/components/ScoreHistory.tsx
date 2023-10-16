@@ -44,11 +44,11 @@ const ScoreHistoryWrapper = styled.div`
   display: flex;
   width: 100%;
   border-radius: var(--border-radius);
-  border: 1px solid #e0e0e0;
+  border: 1px solid var(--border-color);
   background-color: #f5f5f5;
 
   > *:not(:last-child) {
-    border-right: 1px solid #e0e0e0;
+    border-right: 1px solid var(--border-color);
   }
 `;
 
@@ -80,7 +80,7 @@ const Box = styled.div<BoxProps>`
   }
 
   &:nth-child(2) {
-    border-top: 1px solid #e0e0e0;
+    border-top: 1px solid var(--border-color);
   }
 `;
 
@@ -90,7 +90,7 @@ const RestartButton = styled.button`
   font-size: 1.2rem;
   border: none;
   cursor: pointer;
-  background-color: #e0e0e0;
+  background-color: var(--border-color);
 
   &:hover:enabled {
     background-color: #fafafa;

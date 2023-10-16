@@ -2,7 +2,7 @@ import { useReducer } from "react";
 
 import { act, renderHook } from "@testing-library/react";
 
-import { gameReducer } from "../../contexts/gameReducer";
+import { gameReducer } from "../../contexts/GameReducer";
 
 const initialState = {
   started: false,
