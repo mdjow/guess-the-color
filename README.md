@@ -1,4 +1,4 @@
-# Golden Raspberry Awards Project
+# Guess the Color Project
 
 This repository contains the source code of the Guess the Color project, built with React, and TypeScript.
 
