@@ -1,27 +1,77 @@
-# React + TypeScript + Vite
+# Golden Raspberry Awards Project
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This repository contains the source code of the Guess the Color project, built with React, and TypeScript.
 
-Currently, two official plugins are available:
+## How to Run the Project Locally
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Follow the steps below to run the project in your local environment:
 
-## Expanding the ESLint configuration
+1. **Clone the repository:**
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+   ```bash
+   git clone https://github.com/your-username/guess-the-color.git
+   ```
 
-- Configure the top-level `parserOptions` property like this:
+2. **Navigate to the project directory:**
 
-```js
-   parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-   },
+   ```bash
+   cd guess-the-color
+   ```
+
+3. **Install the dependencies:**
+
+   Using npm:
+
+   ```bash
+   npm install
+   ```
+
+   Or using yarn:
+
+   ```bash
+   yarn
+   ```
+
+4. **Start the development server:**
+
+   Using npm:
+
+   ```bash
+   npm run dev
+   ```
+
+   Or using yarn:
+
+   ```bash
+   yarn dev
+   ```
+
+5. **Access the application in your browser:**
+
+   The project will be running at [http://localhost:5173](http://localhost:5173).
+
+## Running Tests with Jest
+
+The project uses Jest as the testing framework. To run the tests, execute the following command:
+
+Using npm:
+
+```bash
+npm test
 ```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+Or using yarn:
+
+```bash
+yarn test
+```
+
+This command will run the tests and display the results in the console.
+
+## Available Scripts
+
+In the project directory, you can run the following scripts:
+
+- **`dev`**: Starts the development server.
+- **`build`**: Compiles the application for production.
+- **`test`**: Runs tests using Jest.
